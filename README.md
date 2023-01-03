@@ -1,4 +1,3 @@
-# faster-rcnn
-# pytorch
+# faster-rcnn pytorch
 
-## data_format: COCO
+data_format: COCO
