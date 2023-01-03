@@ -39,7 +39,7 @@ def seed_everything(seed):
 seed_everything(SEED)
 
 
-class ConstDataset(Dataset):
+class Dataset(Dataset):
     def __init__(
         self,
         image_dir: os.PathLike,
@@ -112,7 +112,7 @@ model.load_state_dict(torch.load("./weights/model1.pth"))
 
 
 if __name__ == '__main__':
-    testset = ConstDataset('data/valid/', 'data/annotations/valid_annotations.json', transforms)
+    testset = Dataset('data/valid/', 'data/annotations/valid_annotations.json', transforms)
     test_loader = DataLoader(testset, batch_size=1, num_workers=0, collate_fn=collate_fn)
     
     model.to('cuda')
